@@ -28,7 +28,7 @@ class PreformattedConverter implements ConverterInterface
         $firstBacktick = strpos(trim($pre_content), '`');
         $lastBacktick = strrpos(trim($pre_content), '`');
         if ($firstBacktick === 0 && $lastBacktick === strlen(trim($pre_content)) - 1) {
-            return $pre_content;
+            return $pre_content .= PHP_EOL;
         }
 
         // If the execution reaches this point it means it's just a pre tag, with no code tag nested
